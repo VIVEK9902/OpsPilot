@@ -30,4 +30,4 @@ COPY --from=builder /app/target/opspilot-0.0.1-SNAPSHOT.jar app.jar
 EXPOSE 8080
 
 # Run the application
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-XX:MaxRAMPercentage=75.0", "-jar", "app.jar"]
