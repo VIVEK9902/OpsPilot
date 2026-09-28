@@ -15,15 +15,12 @@ RUN mvn clean package -DskipTests
 # ==========================================
 # Stage 2: Create the runtime image
 # ==========================================
-FROM eclipse-temurin:21-jre-alpine
+FROM eclipse-temurin:21-jre
 
 WORKDIR /app
 
-# Install native dependencies required by DJL tokenizers
-RUN apk add --no-cache libgcc
-
 # Run as non-root user
-RUN addgroup -S opspilot && adduser -S opspilot -G opspilot
+RUN groupadd -r opspilot && useradd -r -g opspilot opspilot
 USER opspilot
 
 # Copy the packaged jar from the builder stage
