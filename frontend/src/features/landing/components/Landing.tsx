@@ -5,7 +5,7 @@ import {
   Ticket, Package, Sparkles, BookOpen, Activity, Lock, 
   Link as LinkIcon, Server, Monitor, Database, Cloud, 
   Check, LayoutDashboard, ShoppingCart, Users, Settings, 
-  Search, Send, ChevronDown
+  Search, ChevronDown
 } from 'lucide-react';
 
 export const Landing: React.FC = () => {
