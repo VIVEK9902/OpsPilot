@@ -1,0 +1,24 @@
+@layer base {
+  :root {
+    /* Theme Engine Dynamic Configuration Default Overrides */
+    --preview-accent: #c0c1ff;
+    --border-lum: 14%;
+    --blur-val: 18px;
+    --radius-dynamic: 0.5rem;
+  }
+
+  .theme-default {
+    --color-background: #030a16;
+    --color-surface-container-lowest: #02070f;
+    --color-surface-container-low: #061122;
+    --color-surface-container: #081224;
+    --color-surface-container-high: #0b182e;
+    --color-surface-container-highest: #10203a;
+    --color-on-surface: #ffffff;
+    --color-primary: #4aaa28;
+    --color-secondary: #0a5fa5;
+    --color-tertiary: #10968c;
+    --color-outline: #2d4561;
+    --color-outline-variant: #1a2c42;
+  }
+}

@@ -1,0 +1,6 @@
+spring:
+  jwt:
+    secret: "a_very_long_fallback_secret_key_for_local_development_only"
+  ai:
+    openai:
+      api-key: "dummy-key-for-test"

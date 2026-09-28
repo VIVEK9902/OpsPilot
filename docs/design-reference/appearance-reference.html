@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "on-primary-fixed-variant": "#2f2ebe",
+          "surface-container-low": "#161b2a",
+          "surface-container": "#1a1f2e",
+          "on-surface-variant": "#c7c4d7",
+          "secondary": "#d0bcff",
+          "tertiary-container": "#009bd1",
+          "secondary-fixed": "#e9ddff",
+          "tertiary-fixed": "#c4e7ff",
+          "surface": "#0e1321",
+          "tertiary-fixed-dim": "#7bd0ff",
+          "surface-container-highest": "#303444",
+          "inverse-primary": "#494bd6",
+          "outline-variant": "#464554",
+          "on-primary-container": "#0d0096",
+          "inverse-surface": "#dee2f6",
+          "on-primary": "#1000a9",
+          "inverse-on-surface": "#2b303f",
+          "on-tertiary-container": "#002d40",
+          "on-tertiary-fixed": "#001e2c",
+          "on-secondary-fixed-variant": "#5516be",
+          "primary-fixed": "#e1e0ff",
+          "surface-bright": "#343948",
+          "primary-container": "#8083ff",
+          "secondary-container": "#571bc1",
+          "on-surface": "#dee2f6",
+          "on-error-container": "#ffdad6",
+          "on-secondary-fixed": "#23005c",
+          "error": "#ffb4ab",
+          "surface-tint": "#c0c1ff",
+          "on-error": "#690005",
+          "surface-container-high": "#252a39",
+          "primary": "#c0c1ff",
+          "surface-variant": "#303444",
+          "secondary-fixed-dim": "#d0bcff",
+          "outline": "#908fa0",
+          "error-container": "#93000a",
+          "on-tertiary-fixed-variant": "#004c69",
+          "surface-dim": "#0e1321",
+          "on-tertiary": "#00354a",
+          "primary-fixed-dim": "#c0c1ff",
+          "on-background": "#dee2f6",
+          "on-primary-fixed": "#07006c",
+          "background": "#0e1321",
+          "tertiary": "#7bd0ff",
+          "on-secondary": "#3c0091",
+          "surface-container-lowest": "#090e1c",
+          "on-secondary-container": "#c4abff"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "margin-mobile": "1rem",
+          "space-xs": "0.25rem",
+          "gutter": "1.5rem",
+          "space-lg": "1.5rem",
+          "space-md": "1rem",
+          "gutter-sm": "1rem",
+          "gutter-lg": "2rem",
+          "space-xl": "2.5rem",
+          "margin": "2rem",
+          "space-sm": "0.5rem"
+        },
+        "fontFamily": {
+          "display-lg": ["Plus Jakarta Sans"],
+          "label-sm": ["Inter"],
+          "label-lg": ["Inter"],
+          "body-lg": ["Inter"],
+          "body-sm": ["Inter"],
+          "body-md": ["Inter"],
+          "headline-lg": ["Plus Jakarta Sans"],
+          "label-md": ["Inter"],
+          "headline-xl": ["Plus Jakarta Sans"],
+          "headline-sm": ["Plus Jakarta Sans"],
+          "display-lg-mobile": ["Plus Jakarta Sans"],
+          "headline-md": ["Plus Jakarta Sans"],
+          "headline-xl-mobile": ["Plus Jakarta Sans"]
+        },
+        "fontSize": {
+          "display-lg": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "700"}],
+          "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600"}],
+          "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+          "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "-0.005em", "fontWeight": "400"}],
+          "body-sm": ["13px", {"lineHeight": "20px", "letterSpacing": "0.005em", "fontWeight": "400"}],
+          "body-md": ["15px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400"}],
+          "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+          "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+          "headline-xl": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.025em", "fontWeight": "700"}],
+          "headline-sm": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+          "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "700"}],
+          "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+          "headline-xl-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600"}]
+        }
+      }
+    }
+  }</script></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col flex-1 overflow-y-auto"><div class="h-16 px-space-md flex items-center justify-between bg-surface-container-low/40"><div class="flex items-center gap-space-sm"><img alt="Brand logo. - Primary color: #6366f1
+- Font: plusJakartaSans
+- Mode: dark
+- Roundness: rounded-md
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WVUZHLeA1rp8zDaKEyACuqRpnvC-I0YRFy-kiqrLqJkwuXCmk8XMCGciBXVORXZgO5aILETbi6ubX8SGamD8VXyzTzBqRZb8YT9I4N6XiYkY9g-RkhEsRMIKFDt9bDBM1lBp36eaYb4Hu_I-WbnO8H_l6mdHY4FHyNFoOlQDilgrUFsm2pskGvLdgTrYU9VwlLhziFlJmPIH3NT4DiciDSyOXgatnxkQztvAwTQrvQRcGnlapht5hwDaM"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface leading-tight tracking-tight">OpsPilot</span><span class="font-label-sm text-label-sm text-outline tracking-wider uppercase">v3.4.2 Enterprise</span></div></div><button class="flex items-center justify-center p-space-xs rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">menu_open</span></button></div><nav class="flex flex-col gap-space-md p-space-md flex-1" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg"><div class="flex flex-col gap-space-xs"><span class="px-space-sm py-space-xs font-label-sm text-label-sm text-outline uppercase tracking-wider">Main</span><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span class="font-label-lg text-label-lg">Dashboard</span></a></div><div class="flex flex-col gap-space-xs"><span class="px-space-sm py-space-xs font-label-sm text-label-sm text-outline uppercase tracking-wider">Operations</span><a class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="tickets" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">confirmation_number</span><span class="font-label-lg text-label-lg">Tickets</span></div><span class="px-space-xs py-0.5 rounded-full bg-surface-container-high font-label-sm text-label-sm text-tertiary-fixed">14</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="orders" href="#"><span class="material-symbols-outlined text-[20px]">order_approve</span><span class="font-label-lg text-label-lg">Orders</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="knowledge-base" href="#"><span class="material-symbols-outlined text-[20px]">menu_book</span><span class="font-label-lg text-label-lg">Knowledge Base</span></a></div><div class="flex flex-col gap-space-xs"><span class="px-space-sm py-space-xs font-label-sm text-label-sm text-outline uppercase tracking-wider">Intelligence</span><a class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="ai-copilot" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">auto_awesome</span><span class="font-label-lg text-label-lg">AI Copilot</span></div><span class="h-2 w-2 rounded-full bg-tertiary animate-ping"></span></a></div><div class="flex flex-col gap-space-xs"><span class="px-space-sm py-space-xs font-label-sm text-label-sm text-outline uppercase tracking-wider">Administration</span><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="audit-logs" href="#"><span class="material-symbols-outlined text-[20px]">history_edu</span><span class="font-label-lg text-label-lg">Audit Logs</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="users-and-access" href="#"><span class="material-symbols-outlined text-[20px]">shield_person</span><span class="font-label-lg text-label-lg">Users &amp; Access</span></a></div><div class="flex flex-col gap-space-xs"><span class="px-space-sm py-space-xs font-label-sm text-label-sm text-outline uppercase tracking-wider">Preferences</span><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-space-xs transition-colors bg-primary-container text-on-primary-container font-semibold rounded-lg" data-path="appearance-and-themes" href="#"><span class="material-symbols-outlined text-[20px]">palette</span><span class="font-label-lg text-label-lg">Appearance</span></a></div></nav></div><div class="p-space-md bg-surface-container-low/60 flex flex-col gap-space-sm"><div class="flex items-center justify-between px-space-sm py-space-xs rounded-lg bg-surface-container"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[16px] text-tertiary">verified_user</span><span class="font-label-sm text-label-sm text-on-surface-variant">SOC2 Type II</span></div><span class="px-1.5 py-0.5 rounded-full bg-surface-container-highest font-label-sm text-label-sm text-on-surface">Audited</span></div><div class="flex items-center justify-between text-on-surface-variant px-space-sm"><span class="font-label-sm text-label-sm text-outline">Memory Pressure</span><span class="font-label-sm text-label-sm text-on-surface">42% OK</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md"><img alt="Brand logo. - Primary color: #6366f1
+- Font: plusJakartaSans
+- Mode: dark
+- Roundness: rounded-md
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WVUZHLeA1rp8zDaKEyACuqRpnvC-I0YRFy-kiqrLqJkwuXCmk8XMCGciBXVORXZgO5aILETbi6ubX8SGamD8VXyzTzBqRZb8YT9I4N6XiYkY9g-RkhEsRMIKFDt9bDBM1lBp36eaYb4Hu_I-WbnO8H_l6mdHY4FHyNFoOlQDilgrUFsm2pskGvLdgTrYU9VwlLhziFlJmPIH3NT4DiciDSyOXgatnxkQztvAwTQrvQRcGnlapht5hwDaM"/><div class="relative w-80"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span><input class="w-full bg-surface-container-low pl-9 pr-14 py-space-xs rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container" placeholder="Search commands, tickets, incidents..." type="text"/><span class="absolute right-2.5 top-1/2 -translate-y-1/2 px-1.5 py-0.5 rounded bg-surface-container-highest font-label-sm text-label-sm text-outline">⌘K</span></div><div class="hidden xl:flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-surface-container-low"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-tertiary"></span></span><span class="font-label-sm text-label-sm text-outline">Cluster:</span><span class="font-label-sm text-label-sm text-tertiary-fixed-dim">us-east-prod-08</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center bg-surface-container-low p-space-xs rounded-lg gap-1"><button class="px-2 py-1 rounded font-label-sm text-label-sm text-outline hover:text-on-surface transition-colors" type="button">Customer</button><button class="px-2 py-1 rounded font-label-sm text-label-sm text-outline hover:text-on-surface transition-colors" type="button">Support</button><button class="px-2 py-1 rounded font-label-sm text-label-sm bg-primary text-on-primary font-semibold" type="button">Admin</button></div><button class="relative p-space-xs rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1 right-1 flex h-4 w-4 items-center justify-center rounded-full bg-error text-on-error font-label-sm text-[10px] font-bold">5</span></button><button class="p-space-xs rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">terminal</span></button><div class="flex items-center gap-space-sm pl-space-sm"><div class="flex flex-col text-right hidden sm:flex"><span class="font-label-md text-label-md text-on-surface font-semibold">Devon Vance</span><span class="font-label-sm text-label-sm text-outline">Principal Ops Lead</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 bg-surface"><div class="flex flex-col w-full">
+<div class="p-space-lg max-w-[1720px] mx-auto w-full flex flex-col gap-space-xl">
+<!-- Top Architecture Bar: Title + Context Metrics -->
+<div class="relative flex flex-col lg:flex-row lg:items-end justify-between gap-space-lg">
+<!-- Ambient Glow Behind Title -->
+<div class="absolute -top-12 -left-10 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+<div class="flex flex-col gap-space-xs max-w-3xl">
+<div class="flex items-center gap-space-sm">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-surface-container-high text-tertiary font-label-sm text-label-sm uppercase tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+            Design Engine v4.2 Pro
+          </span>
+<span class="font-label-sm text-label-sm text-outline">/</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Global System Tokens</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface font-bold tracking-tight">
+          Workspace Appearance &amp; Design Engine
+        </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+          Calibrate mathematical color spaces, quantum contrast modes, surface glass refraction, and spatial kinetic properties across the enterprise flight deck.
+        </p>
+</div>
+<!-- Quick Telemetry & Status Badges -->
+<div class="flex items-center gap-space-md bg-surface-container-low p-space-sm rounded-xl shadow-lg">
+<div class="flex flex-col px-space-sm">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Luminance Contrast</span>
+<div class="flex items-baseline gap-1.5">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">14.8:1</span>
+<span class="font-label-sm text-label-sm text-tertiary font-medium">AAA Max</span>
+</div>
+</div>
+<div class="w-px h-8 bg-surface-container-highest"></div>
+<div class="flex flex-col px-space-sm">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Active Engine</span>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+<span class="font-label-md text-label-md text-primary font-semibold" id="activeThemeBadgeLabel">Twilight Slate</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Workspace Split Grid: 7 Cols Studio Controls | 5 Cols Live Reactor Deck -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-gutter-lg items-start">
+<!-- LEFT CONFIGURATION COLUMN (Col 1-7) -->
+<div class="xl:col-span-7 flex flex-col gap-space-xl">
+<!-- 01: Theme Preset Showcase (Curated High-End Profiles) -->
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container-high text-outline">01</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Pre-Calibrated Archetypes</h2>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Click card to compile instant state</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md" id="presetDeck">
+<!-- Preset 1: Twilight Slate -->
+<button class="preset-card group text-left relative p-space-lg rounded-xl bg-surface-container-low transition-all duration-300 shadow-md hover:shadow-xl hover:bg-surface-container active:scale-[0.99] ring-2 ring-primary" data-preset="twilight" type="button">
+<div class="absolute top-4 right-4 flex items-center gap-1.5 text-primary">
+<span class="preset-check material-symbols-outlined text-[20px]">check_circle</span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center gap-2.5">
+<div class="flex -space-x-1.5">
+<span class="w-4 h-4 rounded-full bg-[#0e1321] ring-1 ring-white/20"></span>
+<span class="w-4 h-4 rounded-full bg-[#1a1f2e] ring-1 ring-white/20"></span>
+<span class="w-4 h-4 rounded-full bg-[#8083ff] ring-1 ring-white/20"></span>
+<span class="w-4 h-4 rounded-full bg-[#7bd0ff] ring-1 ring-white/20"></span>
+</div>
+<span class="font-label-sm text-label-sm font-semibold uppercase tracking-wider text-primary">Master Default</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Twilight Slate</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Deep obsidian, slate-blue surfaces, luminous electric indigo and atmospheric cyan signals.</p>
+</div>
+<div class="flex items-center gap-2 pt-space-xs">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high font-label-sm text-label-sm text-outline">#0E1321 Base</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high font-label-sm text-label-sm text-tertiary">Indigo Refraction</span>
+</div>
+</div>
+</button>
+<!-- Preset 2: Titanium Frost -->
+<button class="preset-card group text-left relative p-space-lg rounded-xl bg-surface-container-low transition-all duration-300 shadow-md hover:shadow-xl hover:bg-surface-container active:scale-[0.99]" data-preset="titanium" type="button">
+<div class="absolute top-4 right-4 flex items-center gap-1.5 text-outline group-hover:text-on-surface">
+<span class="preset-check material-symbols-outlined text-[20px] opacity-0 group-hover:opacity-40">radio_button_unchecked</span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center gap-2.5">
+<div class="flex -space-x-1.5">
+<span class="w-4 h-4 rounded-full bg-[#161b2a] ring-1 ring-white/20"></span>
+<span class="w-4 h-4 rounded-full bg-[#252a39] ring-1 ring-white/20"></span>
+<span class="w-4 h-4 rounded-full bg-[#38bdf8] ring-1 ring-white/20"></span>
+<span class="w-4 h-4 rounded-full bg-[#e2e8f0] ring-1 ring-white/20"></span>
+</div>
+<span class="font-label-sm text-label-sm font-semibold uppercase tracking-wider text-on-surface-variant">Cold Metallic</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Titanium Frost</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Refined mid-tone slate, polished silver micro-borders, glacial blue photon telemetry.</p>
+</div>
+<div class="flex items-center gap-2 pt-space-xs">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high font-label-sm text-label-sm text-outline">#161B2A Pure</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high font-label-sm text-label-sm text-tertiary-fixed">Silver Edge</span>
+</div>
+</div>
+</button>
+<!-- Preset 3: Obsidian OLED -->
+<button class="preset-card group text-left relative p-space-lg rounded-xl bg-surface-container-low transition-all duration-300 shadow-md hover:shadow-xl hover:bg-surface-container active:scale-[0.99]" data-preset="obsidian" type="button">
+<div class="absolute top-4 right-4 flex items-center gap-1.5 text-outline group-hover:text-on-surface">
+<span class="preset-check material-symbols-outlined text-[20px] opacity-0 group-hover:opacity-40">radio_button_unchecked</span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center gap-2.5">
+<div class="flex -space-x-1.5">
+<span class="w-4 h-4 rounded-full bg-[#05070b] ring-1 ring-white/20"></span>
+<span class="w-4 h-4 rounded-full bg-[#0c1017] ring-1 ring-white/20"></span>
+<span class="w-4 h-4 rounded-full bg-[#10b981] ring-1 ring-white/20"></span>
+<span class="w-4 h-4 rounded-full bg-[#a855f7] ring-1 ring-white/20"></span>
+</div>
+<span class="font-label-sm text-label-sm font-semibold uppercase tracking-wider text-on-surface-variant">Extreme Range</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Obsidian OLED</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Pitch zero-black backdrop (#05070B), hyper-contrast emerald and violet accents, zero fatigue.</p>
+</div>
+<div class="flex items-center gap-2 pt-space-xs">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high font-label-sm text-label-sm text-outline">Zero Black</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high font-label-sm text-label-sm text-secondary">Optic Emerald</span>
+</div>
+</div>
+</button>
+<!-- Preset 4: Cybernetic Aurora -->
+<button class="preset-card group text-left relative p-space-lg rounded-xl bg-surface-container-low transition-all duration-300 shadow-md hover:shadow-xl hover:bg-surface-container active:scale-[0.99]" data-preset="aurora" type="button">
+<div class="absolute top-4 right-4 flex items-center gap-1.5 text-outline group-hover:text-on-surface">
+<span class="preset-check material-symbols-outlined text-[20px] opacity-0 group-hover:opacity-40">radio_button_unchecked</span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center gap-2.5">
+<div class="flex -space-x-1.5">
+<span class="w-4 h-4 rounded-full bg-[#0b1021] ring-1 ring-white/20"></span>
+<span class="w-4 h-4 rounded-full bg-[#1e1b4b] ring-1 ring-white/20"></span>
+<span class="w-4 h-4 rounded-full bg-[#ec4899] ring-1 ring-white/20"></span>
+<span class="w-4 h-4 rounded-full bg-[#f59e0b] ring-1 ring-white/20"></span>
+</div>
+<span class="font-label-sm text-label-sm font-semibold uppercase tracking-wider text-on-surface-variant">Multi-Spectral</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Cybernetic Aurora</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Deep indigo navy infused with multi-spectral rose-magenta, electric amber, and hyper-cyan glows.</p>
+</div>
+<div class="flex items-center gap-2 pt-space-xs">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high font-label-sm text-label-sm text-outline">Spectral 8K</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high font-label-sm text-label-sm text-error">Prism Shift</span>
+</div>
+</div>
+</button>
+</div>
+</div>
+<!-- 02: Chromatic Control Matrix & Hues -->
+<div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col gap-space-lg shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container-high text-outline">02</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Chromatic Matrix &amp; Spectrum</h2>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-mono tracking-wider" id="activeHexLabel">#6366F1</span>
+</div>
+<!-- Base Mode Selector -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Canvas Environment Tone</label>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm bg-surface-container p-1.5 rounded-xl">
+<button class="canvas-mode-btn py-2 px-3 rounded-lg text-center font-label-sm text-label-sm transition-colors bg-primary text-on-primary font-semibold" data-canvas="dark" type="button">
+                Dark Default
+              </button>
+<button class="canvas-mode-btn py-2 px-3 rounded-lg text-center font-label-sm text-label-sm transition-colors text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high" data-canvas="mid-tone" type="button">
+                Mid Twilight
+              </button>
+<button class="canvas-mode-btn py-2 px-3 rounded-lg text-center font-label-sm text-label-sm transition-colors text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high" data-canvas="oled" type="button">
+                Pure OLED
+              </button>
+<button class="canvas-mode-btn py-2 px-3 rounded-lg text-center font-label-sm text-label-sm transition-colors text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high" data-canvas="contrast" type="button">
+                High-Con Pro
+              </button>
+</div>
+</div>
+<!-- Primary Accent Swatches + Custom Hex Reactor -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<label class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Primary Accent Signal Engine</label>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Click swatch to re-wire cockpit</span>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-6 gap-space-sm">
+<!-- Swatch 1 -->
+<button class="color-swatch-btn p-3 rounded-xl bg-surface-container hover:bg-surface-container-high flex flex-col items-center gap-2 transition-all ring-2 ring-primary" data-color="#6366f1" data-name="Electric Indigo" type="button">
+<span class="w-8 h-8 rounded-full shadow-lg" style="background: linear-gradient(135deg, #4F46E5, #7C3AED);"></span>
+<span class="font-label-sm text-label-sm text-on-surface font-medium">Indigo</span>
+</button>
+<!-- Swatch 2 -->
+<button class="color-swatch-btn p-3 rounded-xl bg-surface-container hover:bg-surface-container-high flex flex-col items-center gap-2 transition-all" data-color="#06b6d4" data-name="Hyper Cyan" type="button">
+<span class="w-8 h-8 rounded-full shadow-lg" style="background: linear-gradient(135deg, #06B6D4, #3B82F6);"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Cyan</span>
+</button>
+<!-- Swatch 3 -->
+<button class="color-swatch-btn p-3 rounded-xl bg-surface-container hover:bg-surface-container-high flex flex-col items-center gap-2 transition-all" data-color="#10b981" data-name="Emerald Pulse" type="button">
+<span class="w-8 h-8 rounded-full shadow-lg" style="background: linear-gradient(135deg, #10B981, #059669);"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Emerald</span>
+</button>
+<!-- Swatch 4 -->
+<button class="color-swatch-btn p-3 rounded-xl bg-surface-container hover:bg-surface-container-high flex flex-col items-center gap-2 transition-all" data-color="#f43f5e" data-name="Rose Neon" type="button">
+<span class="w-8 h-8 rounded-full shadow-lg" style="background: linear-gradient(135deg, #F43F5E, #E11D48);"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Rose</span>
+</button>
+<!-- Swatch 5 -->
+<button class="color-swatch-btn p-3 rounded-xl bg-surface-container hover:bg-surface-container-high flex flex-col items-center gap-2 transition-all" data-color="#f59e0b" data-name="Solar Amber" type="button">
+<span class="w-8 h-8 rounded-full shadow-lg" style="background: linear-gradient(135deg, #F59E0B, #D97706);"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Amber</span>
+</button>
+<!-- Swatch 6: Custom Hex Input -->
+<div class="relative p-2.5 rounded-xl bg-surface-container flex flex-col items-center justify-center gap-1">
+<input class="w-7 h-7 rounded-full cursor-pointer bg-transparent border-none p-0" id="hexPickerInput" type="color" value="#6366f1"/>
+<span class="font-label-sm text-label-sm text-outline uppercase text-[10px]">Custom</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 03: Surface Physics & Elevation Controls -->
+<div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col gap-space-lg shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container-high text-outline">03</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Glass Physics, Blur &amp; Geometry</h2>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Optic Surface Shaders</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
+<!-- Luminance & Hairline Slider -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-medium">Micro-Border Luminance</span>
+<span class="font-mono text-label-sm text-label-sm text-tertiary" id="borderLumVal">14%</span>
+</div>
+<input class="w-full accent-primary bg-surface-container h-2 rounded-lg cursor-pointer" id="borderLumSlider" max="40" min="2" type="range" value="14"/>
+<p class="font-body-sm text-body-sm text-outline">Controls hairline edge refraction intensity on cards.</p>
+</div>
+<!-- Glass Backdrop Blur Slider -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-medium">Aero Backdrop Blur</span>
+<span class="font-mono text-label-sm text-label-sm text-tertiary" id="blurVal">18px</span>
+</div>
+<input class="w-full accent-primary bg-surface-container h-2 rounded-lg cursor-pointer" id="blurSlider" max="36" min="0" type="range" value="18"/>
+<p class="font-body-sm text-body-sm text-outline">Defines depth gaussian pass on layered telemetry sheets.</p>
+</div>
+</div>
+<!-- Geometry Corner Radius Matrix -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<label class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Spatial Curvature (Border Radius)</label>
+<div class="grid grid-cols-4 gap-space-sm bg-surface-container p-1.5 rounded-xl">
+<button class="radius-btn py-2 text-center font-label-sm text-label-sm rounded text-on-surface-variant hover:text-on-surface transition-all" data-radius="4px" type="button">
+                4px Sharp
+              </button>
+<button class="radius-btn py-2 text-center font-label-sm text-label-sm rounded text-on-surface-variant hover:text-on-surface transition-all" data-radius="8px" type="button">
+                8px Standard
+              </button>
+<button class="radius-btn py-2 text-center font-label-sm text-label-sm rounded-xl bg-primary text-on-primary font-semibold shadow transition-all" data-radius="14px" type="button">
+                14px Smooth
+              </button>
+<button class="radius-btn py-2 text-center font-label-sm text-label-sm rounded-full text-on-surface-variant hover:text-on-surface transition-all" data-radius="9999px" type="button">
+                Full Capsule
+              </button>
+</div>
+</div>
+</div>
+<!-- 04: Typographic Calibration Engine -->
+<div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col gap-space-lg shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container-high text-outline">04</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Display Typography System</h2>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Variable Font Metrics</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<button class="font-choice-btn p-space-md rounded-xl bg-surface-container text-left flex flex-col gap-1 transition-all ring-2 ring-primary" data-font="Plus Jakarta Sans" type="button">
+<span class="font-display-lg text-[22px] leading-tight font-bold text-on-surface">Plus Jakarta</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Executive Modern (Active)</span>
+<span class="font-body-sm text-body-sm text-outline mt-1">Sculpted geometric numerals with high legibility.</span>
+</button>
+<button class="font-choice-btn p-space-md rounded-xl bg-surface-container text-left flex flex-col gap-1 transition-all hover:bg-surface-container-high" data-font="Inter" type="button">
+<span class="font-display-lg text-[22px] leading-tight font-bold text-on-surface" style="font-family: 'Inter', sans-serif;">Inter Precision</span>
+<span class="font-label-sm text-label-sm text-outline">Technical Dense</span>
+<span class="font-body-sm text-body-sm text-outline mt-1">Optimal optical sizing for mission-critical telemetry.</span>
+</button>
+<button class="font-choice-btn p-space-md rounded-xl bg-surface-container text-left flex flex-col gap-1 transition-all hover:bg-surface-container-high" data-font="JetBrains Mono" type="button">
+<span class="font-display-lg text-[20px] leading-tight font-bold text-on-surface font-mono">JetBrains Pro</span>
+<span class="font-label-sm text-label-sm text-outline">Monospace Core</span>
+<span class="font-body-sm text-body-sm text-outline mt-1">Uncompromising grid alignment for code &amp; cluster ops.</span>
+</button>
+</div>
+</div>
+</div>
+<!-- RIGHT LIVE SIMULATOR COCKPIT (Col 8-12) -->
+<div class="xl:col-span-5 flex flex-col gap-space-lg xl:sticky xl:top-20">
+<!-- Simulator Container Header -->
+<div class="flex items-center justify-between px-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">tune</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Live Reactor Canvas</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="inline-flex h-2 w-2 rounded-full bg-tertiary animate-ping"></span>
+<span class="font-label-sm text-label-sm text-tertiary-fixed font-mono">SYNCHRONIZED (60FPS)</span>
+</div>
+</div>
+<!-- SIMULATED ENTERPRISE UI COCKPIT -->
+<div class="relative rounded-2xl bg-surface-container-low p-space-lg flex flex-col gap-space-lg shadow-2xl transition-all duration-300 overflow-hidden" id="livePreviewCockpit" style="box-shadow: 0 20px 50px -15px rgba(0,0,0,0.7), 0 0 30px 0 rgba(99,102,241,0.15);">
+<!-- Background Atmospheric Radial Spot in Simulator -->
+<div class="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-primary/20 blur-3xl pointer-events-none transition-all duration-500" id="previewGlow"></div>
+<!-- Micro Cockpit Navigation Header -->
+<div class="flex items-center justify-between pb-space-sm border-b border-white/5">
+<div class="flex items-center gap-space-sm">
+<div class="w-3 h-3 rounded-full bg-error/80"></div>
+<div class="w-3 h-3 rounded-full bg-tertiary/80"></div>
+<div class="w-3 h-3 rounded-full bg-secondary/80"></div>
+<span class="font-label-sm text-label-sm text-outline ml-2 font-mono">OPS_CLUSTER_NODE_09</span>
+</div>
+<div class="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-surface-container-high text-[11px] font-mono text-tertiary">
+              LATENCY: 12ms
+            </div>
+</div>
+<!-- SECTION: Metric Telemetry Card With Inline SVG Sparkline -->
+<div class="p-space-md rounded-xl bg-surface-container flex flex-col gap-space-sm transition-all duration-300" id="previewMetricCard">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Autonomous Inference Velocity</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high font-label-sm text-label-sm text-tertiary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">arrow_upward</span> +24.8%
+              </span>
+</div>
+<div class="flex items-baseline justify-between">
+<div class="flex items-baseline gap-2">
+<span class="font-display-lg text-display-lg text-on-surface font-bold" id="previewMetricVal">98.42</span>
+<span class="font-label-md text-label-md text-outline">req/ms</span>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary font-mono">99.999% SLA</span>
+</div>
+<!-- Inline Live Sparkline Visualization -->
+<div class="w-full h-14 pt-2">
+<svg class="w-full h-full overflow-visible" preserveaspectratio="none" viewbox="0 0 400 60">
+<defs>
+<lineargradient id="sparklineGrad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="var(--preview-accent, #6366f1)" stop-opacity="0.4"></stop>
+<stop offset="100%" stop-color="var(--preview-accent, #6366f1)" stop-opacity="0.0"></stop>
+</lineargradient>
+</defs>
+<path d="M0,45 Q30,48 60,32 T120,28 T180,40 T240,15 T300,22 T360,8 L400,12 L400,60 L0,60 Z" fill="url(#sparklineGrad)"></path>
+<path class="text-primary" d="M0,45 Q30,48 60,32 T120,28 T180,40 T240,15 T300,22 T360,8 L400,12" fill="none" id="sparklineLine" stroke="currentColor" stroke-width="2.5"></path>
+<!-- Glowing telemetry marker -->
+<circle class="fill-primary animate-ping" cx="400" cy="12" r="4"></circle>
+<circle class="fill-on-primary" cx="400" cy="12" r="3.5"></circle>
+</svg>
+</div>
+</div>
+<!-- SECTION: Button Suite Demo -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Button Elevation Engine</span>
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- Primary Engine Action -->
+<button class="flex items-center justify-center gap-2 py-2.5 px-space-md rounded-xl font-label-lg text-label-lg text-white font-semibold transition-all duration-200 hover:brightness-110 active:scale-95 shadow-lg" id="previewPrimaryBtn" style="background: linear-gradient(135deg, #4F46E5, #7C3AED); box-shadow: 0 4px 14px rgba(99,102,241,0.4);" type="button">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+                Primary Action
+              </button>
+<!-- Secondary Glass Action -->
+<button class="flex items-center justify-center gap-2 py-2.5 px-space-md rounded-xl font-label-lg text-label-lg text-on-surface bg-white/5 hover:bg-white/10 transition-all duration-200 active:scale-95" id="previewSecondaryBtn" type="button">
+<span class="material-symbols-outlined text-[18px]">cached</span>
+                Secondary
+              </button>
+<!-- Destructive Action -->
+<button class="flex items-center justify-center gap-2 py-2.5 px-space-md rounded-xl font-label-lg text-label-lg text-error bg-error-container/30 hover:bg-error-container/50 transition-all duration-200" type="button">
+<span class="material-symbols-outlined text-[18px]">dangerous</span>
+                Evacuate Node
+              </button>
+<!-- Ghost Filter Action -->
+<button class="flex items-center justify-center gap-2 py-2.5 px-space-md rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">filter_alt</span>
+                Ghost Action
+              </button>
+</div>
+</div>
+<!-- SECTION: Semantic Status Tokens -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Operational Status Badges</span>
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-tertiary-container/30 text-tertiary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                ACTIVE
+              </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-container/40 text-secondary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                PROCESSING
+              </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+                QUEUED
+              </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-error-container/30 text-error font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+                DEGRADED
+              </span>
+</div>
+</div>
+<!-- SECTION: Form Inputs with Focus Lum -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Focus-Luminescent Field</span>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]">shield</span>
+<input class="w-full bg-surface-container pl-10 pr-24 py-2.5 rounded-xl font-body-sm text-body-sm text-on-surface focus:outline-none transition-all shadow-inner" id="previewInput" style="box-shadow: inset 0 2px 4px rgba(0,0,0,0.3);" type="text" value="prod-kubernetes-control-cluster-us"/>
+<button class="absolute right-1.5 top-1/2 -translate-y-1/2 px-2.5 py-1 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-sm text-label-sm transition-colors" type="button">
+                Commit
+              </button>
+</div>
+</div>
+<!-- Micro Telemetry Summary Strip -->
+<div class="pt-space-xs flex items-center justify-between font-label-sm text-label-sm text-outline border-t border-white/5">
+<span class="font-mono">CSS_VARS: 48 TOKENS</span>
+<span class="font-mono text-tertiary">GPU COMPOSITED</span>
+</div>
+</div>
+<!-- Token Inspector Drawer Trigger -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-space-sm">
+<div class="p-2 rounded-lg bg-surface-container-high text-tertiary">
+<span class="material-symbols-outlined text-[20px]">code_blocks</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Design System Payload</span>
+<span class="font-label-sm text-label-sm text-outline">Tailwind tokens + CSS custom properties</span>
+</div>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high font-label-sm text-label-sm text-on-surface transition-colors flex items-center gap-1.5" id="copyTokensQuickBtn" type="button">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+            Copy JSON
+          </button>
+</div>
+</div>
+</div>
+<!-- Architectural Action Footer Deck -->
+<div class="mt-space-md p-space-md rounded-2xl bg-surface-container-low shadow-xl flex flex-col md:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<button class="px-space-md py-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-all flex items-center gap-2" id="resetDefaultsBtn" type="button">
+<span class="material-symbols-outlined text-[18px]">restart_alt</span>
+          Reset to Factory Presets
+        </button>
+<button class="px-space-md py-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-all flex items-center gap-2" id="exportTokensBtn" type="button">
+<span class="material-symbols-outlined text-[18px]">file_download</span>
+          Export DESIGN.md
+        </button>
+</div>
+<div class="flex items-center gap-space-md w-full md:w-auto justify-end">
+<span class="font-label-sm text-label-sm text-outline hidden lg:inline">Auto-saves to local runtime</span>
+<button class="w-full md:w-auto px-space-xl py-3 rounded-xl text-on-primary font-headline-sm text-[16px] font-bold transition-all duration-200 hover:brightness-110 active:scale-95 shadow-xl flex items-center justify-center gap-2" id="publishWorkspaceBtn" style="background: linear-gradient(135deg, #4F46E5, #7C3AED); box-shadow: 0 4px 20px rgba(99,102,241,0.4);" type="button">
+<span class="material-symbols-outlined text-[20px]">rocket_launch</span>
+          Publish Changes to Enterprise Workspace
+        </button>
+</div>
+</div>
+</div>
+<!-- Notification Toast Container for Interactive Feedback -->
+<div class="fixed bottom-8 right-8 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-space-sm px-space-lg py-3 rounded-xl bg-surface-container-highest text-on-surface shadow-2xl" id="toastNotification">
+<span class="material-symbols-outlined text-tertiary text-[22px]" id="toastIcon">check_circle</span>
+<span class="font-label-md text-label-md" id="toastMessage">Workspace appearance compiled successfully.</span>
+</div>
+<!-- Client Interaction Logic Script -->
+<script>
+    (function() {
+      // Internal State
+      const state = {
+        preset: 'twilight',
+        canvasMode: 'dark',
+        accentColor: '#6366f1',
+        accentName: 'Electric Indigo',
+        borderLum: 14,
+        blur: 18,
+        radius: '14px',
+        font: 'Plus Jakarta Sans'
+      };
+
+      // Presets Dictionary
+      const PRESETS = {
+        twilight: {
+          name: 'Twilight Slate',
+          accent: '#6366f1',
+          accentName: 'Electric Indigo',
+          canvas: 'dark',
+          borderLum: 14,
+          blur: 18,
+          radius: '14px',
+          font: 'Plus Jakarta Sans'
+        },
+        titanium: {
+          name: 'Titanium Frost',
+          accent: '#38bdf8',
+          accentName: 'Glacial Sky',
+          canvas: 'mid-tone',
+          borderLum: 22,
+          blur: 24,
+          radius: '8px',
+          font: 'Inter'
+        },
+        obsidian: {
+          name: 'Obsidian OLED',
+          accent: '#10b981',
+          accentName: 'Emerald Pulse',
+          canvas: 'oled',
+          borderLum: 8,
+          blur: 12,
+          radius: '4px',
+          font: 'JetBrains Mono'
+        },
+        aurora: {
+          name: 'Cybernetic Aurora',
+          accent: '#f43f5e',
+          accentName: 'Rose Neon',
+          canvas: 'dark',
+          borderLum: 20,
+          blur: 28,
+          radius: '9999px',
+          font: 'Plus Jakarta Sans'
+        }
+      };
+
+      // DOM Elements
+      const presetCards = document.querySelectorAll('.preset-card');
+      const canvasBtns = document.querySelectorAll('.canvas-mode-btn');
+      const colorSwatches = document.querySelectorAll('.color-swatch-btn');
+      const hexPickerInput = document.getElementById('hexPickerInput');
+      const activeHexLabel = document.getElementById('activeHexLabel');
+      const borderLumSlider = document.getElementById('borderLumSlider');
+      const borderLumVal = document.getElementById('borderLumVal');
+      const blurSlider = document.getElementById('blurSlider');
+      const blurVal = document.getElementById('blurVal');
+      const radiusBtns = document.querySelectorAll('.radius-btn');
+      const fontBtns = document.querySelectorAll('.font-choice-btn');
+      
+      // Live Preview Elements
+      const liveCockpit = document.getElementById('livePreviewCockpit');
+      const previewGlow = document.getElementById('previewGlow');
+      const previewPrimaryBtn = document.getElementById('previewPrimaryBtn');
+      const previewSecondaryBtn = document.getElementById('previewSecondaryBtn');
+      const previewMetricCard = document.getElementById('previewMetricCard');
+      const previewMetricVal = document.getElementById('previewMetricVal');
+      const sparklineLine = document.getElementById('sparklineLine');
+      const activeThemeBadgeLabel = document.getElementById('activeThemeBadgeLabel');
+      const toast = document.getElementById('toastNotification');
+      const toastMessage = document.getElementById('toastMessage');
+
+      function showToast(msg) {
+        toastMessage.textContent = msg;
+        toast.classList.remove('translate-y-24', 'opacity-0');
+        toast.classList.add('translate-y-0', 'opacity-100');
+        setTimeout(() => {
+          toast.classList.add('translate-y-24', 'opacity-0');
+          toast.classList.remove('translate-y-0', 'opacity-100');
+        }, 3200);
+      }
+
+      function updateLiveReactor() {
+        // Apply Accent Color & Gradients
+        activeHexLabel.textContent = state.accentColor.toUpperCase();
+        activeThemeBadgeLabel.textContent = PRESETS[state.preset]?.name || 'Custom Calibrated';
+
+        // Update Primary CTA gradient & glow in preview
+        previewPrimaryBtn.style.background = `linear-gradient(135deg, ${state.accentColor}, #7c3aed)`;
+        previewPrimaryBtn.style.boxShadow = `0 4px 18px ${state.accentColor}55`;
+        
+        // Update glow background spot
+        previewGlow.style.backgroundColor = state.accentColor;
+        liveCockpit.style.boxShadow = `0 20px 50px -15px rgba(0,0,0,0.7), 0 0 35px 0 ${state.accentColor}33`;
+
+        // Update sparkline SVG
+        document.documentElement.style.setProperty('--preview-accent', state.accentColor);
+        sparklineLine.style.stroke = state.accentColor;
+
+        // Apply Radius dynamically across preview elements
+        previewPrimaryBtn.style.borderRadius = state.radius;
+        previewSecondaryBtn.style.borderRadius = state.radius;
+        previewMetricCard.style.borderRadius = state.radius === '9999px' ? '20px' : state.radius;
+
+        // Apply Font Family
+        liveCockpit.style.fontFamily = state.font === 'JetBrains Mono' ? 'monospace' : `'${state.font}', sans-serif`;
+
+        // Apply Glass & Border settings
+        liveCockpit.style.backdropFilter = `blur(${state.blur}px)`;
+        
+        // Canvas Mode shifts inside cockpit
+        if (state.canvasMode === 'oled') {
+          liveCockpit.style.backgroundColor = '#05070b';
+          previewMetricCard.style.backgroundColor = '#0c1017';
+        } else if (state.canvasMode === 'mid-tone') {
+          liveCockpit.style.backgroundColor = '#161b2a';
+          previewMetricCard.style.backgroundColor = '#252a39';
+        } else if (state.canvasMode === 'contrast') {
+          liveCockpit.style.backgroundColor = '#000000';
+          previewMetricCard.style.backgroundColor = '#111827';
+        } else {
+          liveCockpit.style.backgroundColor = '#161b2a';
+          previewMetricCard.style.backgroundColor = '#1a1f2e';
+        }
+      }
+
+      // Event: Preset Selection
+      presetCards.forEach(card => {
+        card.addEventListener('click', () => {
+          const key = card.getAttribute('data-preset');
+          if (!PRESETS[key]) return;
+          const p = PRESETS[key];
+          
+          state.preset = key;
+          state.accentColor = p.accent;
+          state.accentName = p.accentName;
+          state.canvasMode = p.canvas;
+          state.borderLum = p.borderLum;
+          state.blur = p.blur;
+          state.radius = p.radius;
+          state.font = p.font;
+
+          // UI updates for preset selection
+          presetCards.forEach(c => {
+            c.classList.remove('ring-2', 'ring-primary');
+            const icon = c.querySelector('.preset-check');
+            if (icon) {
+              icon.textContent = 'radio_button_unchecked';
+              icon.classList.add('opacity-0');
+            }
+          });
+          card.classList.add('ring-2', 'ring-primary');
+          const icon = card.querySelector('.preset-check');
+          if (icon) {
+            icon.textContent = 'check_circle';
+            icon.classList.remove('opacity-0');
+          }
+
+          // Sync sliders & inputs
+          borderLumSlider.value = state.borderLum;
+          borderLumVal.textContent = state.borderLum + '%';
+          blurSlider.value = state.blur;
+          blurVal.textContent = state.blur + 'px';
+          hexPickerInput.value = state.accentColor;
+
+          // Sync radius buttons
+          radiusBtns.forEach(rb => {
+            if (rb.getAttribute('data-radius') === state.radius) {
+              rb.className = "radius-btn py-2 text-center font-label-sm text-label-sm rounded bg-primary text-on-primary font-semibold shadow transition-all";
+            } else {
+              rb.className = "radius-btn py-2 text-center font-label-sm text-label-sm rounded text-on-surface-variant hover:text-on-surface transition-all";
+            }
+          });
+
+          // Sync font buttons
+          fontBtns.forEach(fb => {
+            if (fb.getAttribute('data-font') === state.font) {
+              fb.classList.add('ring-2', 'ring-primary');
+            } else {
+              fb.classList.remove('ring-2', 'ring-primary');
+            }
+          });
+
+          updateLiveReactor();
+          showToast(`Preset switched to "${p.name}"`);
+        });
+      });
+
+      // Event: Canvas Environment Selector
+      canvasBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          canvasBtns.forEach(b => {
+            b.className = "canvas-mode-btn py-2 px-3 rounded-lg text-center font-label-sm text-label-sm transition-colors text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high";
+          });
+          btn.className = "canvas-mode-btn py-2 px-3 rounded-lg text-center font-label-sm text-label-sm transition-colors bg-primary text-on-primary font-semibold";
+          state.canvasMode = btn.getAttribute('data-canvas');
+          updateLiveReactor();
+        });
+      });
+
+      // Event: Swatches
+      colorSwatches.forEach(swatch => {
+        swatch.addEventListener('click', () => {
+          colorSwatches.forEach(s => s.classList.remove('ring-2', 'ring-primary'));
+          swatch.classList.add('ring-2', 'ring-primary');
+          state.accentColor = swatch.getAttribute('data-color');
+          state.accentName = swatch.getAttribute('data-name');
+          hexPickerInput.value = state.accentColor;
+          updateLiveReactor();
+        });
+      });
+
+      // Event: Native Color Picker
+      hexPickerInput.addEventListener('input', (e) => {
+        state.accentColor = e.target.value;
+        colorSwatches.forEach(s => s.classList.remove('ring-2', 'ring-primary'));
+        updateLiveReactor();
+      });
+
+      // Event: Sliders
+      borderLumSlider.addEventListener('input', (e) => {
+        state.borderLum = e.target.value;
+        borderLumVal.textContent = state.borderLum + '%';
+        updateLiveReactor();
+      });
+
+      blurSlider.addEventListener('input', (e) => {
+        state.blur = e.target.value;
+        blurVal.textContent = state.blur + 'px';
+        updateLiveReactor();
+      });
+
+      // Event: Radius Buttons
+      radiusBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          radiusBtns.forEach(b => {
+            b.className = "radius-btn py-2 text-center font-label-sm text-label-sm rounded text-on-surface-variant hover:text-on-surface transition-all";
+          });
+          btn.className = "radius-btn py-2 text-center font-label-sm text-label-sm rounded bg-primary text-on-primary font-semibold shadow transition-all";
+          state.radius = btn.getAttribute('data-radius');
+          updateLiveReactor();
+        });
+      });
+
+      // Event: Font Buttons
+      fontBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          fontBtns.forEach(b => b.classList.remove('ring-2', 'ring-primary'));
+          btn.classList.add('ring-2', 'ring-primary');
+          state.font = btn.getAttribute('data-font');
+          updateLiveReactor();
+          showToast(`Typography engine updated to ${state.font}`);
+        });
+      });
+
+      // Reset Defaults
+      document.getElementById('resetDefaultsBtn').addEventListener('click', () => {
+        const defaultCard = document.querySelector('[data-preset="twilight"]');
+        if (defaultCard) defaultCard.click();
+        showToast('Factory parameters restored to Twilight Slate.');
+      });
+
+      // Export Tokens Payload
+      const exportJsonHandler = () => {
+        const payload = JSON.stringify({
+          activeArchetype: state.preset,
+          primaryAccent: state.accentColor,
+          canvasMode: state.canvasMode,
+          borderLuminance: `${state.borderLum}%`,
+          backdropBlur: `${state.blur}px`,
+          spatialRadius: state.radius,
+          typography: state.font,
+          compiledAt: new Date().toISOString()
+        }, null, 2);
+
+        navigator.clipboard.writeText(payload).then(() => {
+          showToast('JSON Design Tokens copied to system clipboard.');
+        }).catch(() => {
+          showToast('Tokens prepared. Download ready.');
+        });
+      };
+
+      document.getElementById('exportTokensBtn').addEventListener('click', exportJsonHandler);
+      document.getElementById('copyTokensQuickBtn').addEventListener('click', exportJsonHandler);
+
+      // Publish Workspace Action
+      document.getElementById('publishWorkspaceBtn').addEventListener('click', () => {
+        showToast('Success: Theme dispatched & compiled across 24 cluster nodes.');
+      });
+
+      // Initial Reactor Sync
+      updateLiveReactor();
+    })();
+  </script>
+</div></main></div></body></html>
+

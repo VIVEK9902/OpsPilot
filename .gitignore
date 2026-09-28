@@ -1,0 +1,80 @@
+# =========================
+# Secrets / Environment
+# =========================
+.env
+.env.*
+!.env.example
+
+# =========================
+# Java / Maven
+# =========================
+target/
+**/target/
+
+# =========================
+# Spring Tool Suite / Eclipse
+# =========================
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+.sts4-cache
+
+# =========================
+# IntelliJ IDEA
+# =========================
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# =========================
+# NetBeans
+# =========================
+/nbproject/private/
+/nbbuild/
+/nbdist/
+/.nb-gradle/
+
+# =========================
+# Build output
+# =========================
+build/
+**/build/
+dist/
+**/dist/
+
+# =========================
+# VS Code
+# =========================
+.vscode/
+
+# =========================
+# macOS
+# =========================
+.DS_Store
+
+# =========================
+# Logs / Local DB
+# =========================
+*.log
+*.sqlite
+*.db
+
+# =========================
+# Docs / Generated Output
+# =========================
+docx_output.txt
+docx_output_utf8.txt
+
+# =========================
+# Node
+# =========================
+node_modules/
+
+# =========================
+# Misc
+# =========================
+HELP.md
