@@ -19,6 +19,9 @@ FROM eclipse-temurin:21-jre-alpine
 
 WORKDIR /app
 
+# Install native dependencies required by DJL tokenizers
+RUN apk add --no-cache libgcc
+
 # Run as non-root user
 RUN addgroup -S opspilot && adduser -S opspilot -G opspilot
 USER opspilot
